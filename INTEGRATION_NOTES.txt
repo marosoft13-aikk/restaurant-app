@@ -1,0 +1,30 @@
+# Integration notes (generated)
+
+These changes were added automatically:
+- lib/services/firebase_setup.dart
+- lib/services/auth_service.dart
+- lib/services/notifications_service.dart
+- lib/services/storage_service.dart
+- lib/pages/admin_panel.dart
+- lib/pages/login_page.dart
+
+What you need to do next (required):
+1. Add Firebase config files:
+   - Android: place google-services.json into android/app/
+   - iOS: place GoogleService-Info.plist into ios/Runner/
+   - Web: add Firebase config to web/index.html or initialize FirebaseOptions in firebase_setup.dart
+2. Run `flutter pub get` to fetch added packages.
+3. Update AndroidManifest/Info.plist for FCM and permissions:
+   - Android: add internet permission and Firebase messaging service entries.
+   - iOS: enable push notifications and add required capabilities.
+4. For background messaging on Android/iOS follow official Firebase Messaging docs:
+   - Define a top-level `FirebaseMessaging.onBackgroundMessage` handler.
+5. Review AuthService methods and wire them into your app's login/register flows.
+6. Admin panel expects a Firestore collection `menu`. Each item: {title, order, visible}.
+7. StorageService.uploadReceipt saves receipt metadata to `receipts` collection.
+
+Security & production:
+- Do NOT commit service account keys. Use Firebase console to configure sign-in methods, Firestore rules, and Storage rules.
+- For production, enable App Check and tighten Firestore rules.
+
+If you want, I can now create a new zip with these files merged — it's ready.
