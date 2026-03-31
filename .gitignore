@@ -45,3 +45,6 @@ app.*.map.json
 /android/app/release
 # Custom Android libs
 android/app/libs/
+# videos
+assets/videos/
+*.mp4
